@@ -19,7 +19,11 @@ namespace Calc
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if ((int.MaxValue - int.Parse(FirstText.Text)) - int.Parse(SecondText.Text) <= 0)
+            {
+                this.ResultLable.Text = "超出int上限";
+                return;
+            }
             this.ResultLable.Text = (int.Parse(FirstText.Text) + int.Parse(SecondText.Text)).ToString();
             FirstText.Text = ResultLable.Text;
         }
@@ -62,6 +66,11 @@ namespace Calc
 
         private void multiply_Click(object sender, EventArgs e)
         {
+            if ((int.MaxValue / int.Parse(FirstText.Text)) / int.Parse(SecondText.Text) == 0)
+            {
+                this.ResultLable.Text = "超出int上限";
+                return;
+            }
             this.ResultLable.Text = (int.Parse(FirstText.Text) * int.Parse(SecondText.Text)).ToString();
             FirstText.Text = ResultLable.Text;
             
@@ -75,7 +84,7 @@ namespace Calc
 
         private void equals_Click(object sender, EventArgs e)
         {
-            
+            this.ResultLable.Text = (int.Parse(FirstText.Text) % int.Parse(SecondText.Text)).ToString();
         }
     }
 }

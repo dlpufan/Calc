@@ -96,7 +96,7 @@
             this.equals.Name = "equals";
             this.equals.Size = new System.Drawing.Size(294, 85);
             this.equals.TabIndex = 2;
-            this.equals.Text = "=";
+            this.equals.Text = "取余";
             this.equals.UseVisualStyleBackColor = true;
             this.equals.Click += new System.EventHandler(this.equals_Click);
             // 
